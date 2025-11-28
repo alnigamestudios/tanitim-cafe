@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; padding-bottom: 80px; scroll-behavior: smooth; }
+        .modal-img { width: 100%; height: 300px; object-fit: cover; }
+        body{background:#e0d8b0; font-family:'Courier New'}
+    </style>
+</head>
+<body>
+    <div style="height:220px; background:url('https://res.cloudinary.com/dbwqidxpy/image/upload/v1764355786/ccqy7wr2ujn5fgjyzlfb.avif') center/cover; position:relative;">
+                    <div style="position:absolute;bottom:0;left:0;width:100%;background:linear-gradient(to top, rgba(0,0,0,0.8), transparent);padding:20px;color:white">
+                        <h2 class="m-0 fw-bold">Tanıtım Kafe</h2>
+                        <small>Tanıtım Kafe</small>
+                    </div>
+                </div>
+    
+    <div class="container mt-3">
+        <div class="alert alert-warning border-0 shadow-sm text-center fw-bold"><i class="fas fa-bullhorn"></i> Şimdi sipariş vermek için iletişime geçebilirsiniz.</div>
+        
+        <div class="input-group mb-4 shadow-sm" style="border-radius:20px; overflow:hidden">
+            <span class="input-group-text bg-white border-0 ps-3"><i class="fas fa-search text-muted"></i></span>
+            <input type="text" class="form-control border-0 py-2" placeholder="Menüde ara..." onkeyup="search(this.value)">
+        </div>
+
+        <div id="menuContent"><h5 class="mt-4 mb-3 fw-bold ps-2" style="border-left:4px solid #f05800; color:#333">Sıcak İçecekler</h5><div class="row g-3">
+                    <div class="col-12">
+                        <div class="card h-100 border-0 " style="border-radius:16px; box-shadow:0 10px 20px rgba(0,0,0,0.08); cursor:pointer; overflow:hidden; background:#fff" onclick="openModal('Latte', '', '150', 'https://res.cloudinary.com/dbwqidxpy/image/upload/v1764355449/ensb00vyto4yo2rb0rwr.png', '[{&quot;name&quot;:&quot;Orta Boy&quot;,&quot;price&quot;:&quot;20&quot;},{&quot;name&quot;:&quot;Büyük Boy&quot;,&quot;price&quot;:&quot;30&quot;}]', '', '200')">
+                            <img src="https://res.cloudinary.com/dbwqidxpy/image/upload/v1764355449/ensb00vyto4yo2rb0rwr.png" class="card-img-top" style="height:150px; object-fit:cover">
+                            <div class="card-body p-3 w-100 d-flex flex-column justify-content-between">
+                                <div>
+                                    <div class="mb-1"><span class="badge bg-warning text-dark me-1" style="font-size:10px">Yeni</span></div>
+                                    <h6 class="fw-bold mb-1">Latte</h6>
+                                    <p class="small text-muted mb-2 text-truncate" style="max-height:40px"></p>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center mt-2">
+                                    <span class="fw-bold" style="color:#f05800; font-size:1.1rem">150₺</span>
+                                    <button class="btn btn-sm rounded-circle text-white shadow-sm" style="background:#f05800; width:30px; height:30px; padding:0">+</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div></div><h5 class="mt-4 mb-3 fw-bold ps-2" style="border-left:4px solid #f05800; color:#333">Soğuk İçecekler</h5><div class="row g-3">
+                    <div class="col-12">
+                        <div class="card h-100 border-0 " style="border-radius:16px; box-shadow:0 10px 20px rgba(0,0,0,0.08); cursor:pointer; overflow:hidden; background:#fff" onclick="openModal('İce Latte', '', '150', 'https://res.cloudinary.com/dbwqidxpy/image/upload/v1764355517/bff33w2xrwamc8xufxwf.png', '[]', '', '200')">
+                            <img src="https://res.cloudinary.com/dbwqidxpy/image/upload/v1764355517/bff33w2xrwamc8xufxwf.png" class="card-img-top" style="height:150px; object-fit:cover">
+                            <div class="card-body p-3 w-100 d-flex flex-column justify-content-between">
+                                <div>
+                                    <div class="mb-1"><span class="badge bg-warning text-dark me-1" style="font-size:10px">Yeni</span></div>
+                                    <h6 class="fw-bold mb-1">İce Latte</h6>
+                                    <p class="small text-muted mb-2 text-truncate" style="max-height:40px"></p>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center mt-2">
+                                    <span class="fw-bold" style="color:#f05800; font-size:1.1rem">150₺</span>
+                                    <button class="btn btn-sm rounded-circle text-white shadow-sm" style="background:#f05800; width:30px; height:30px; padding:0">+</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div></div><h5 class="mt-4 mb-3 fw-bold ps-2" style="border-left:4px solid #f05800; color:#333">Tatlılar</h5><div class="row g-3">
+                    <div class="col-12">
+                        <div class="card h-100 border-0 " style="border-radius:16px; box-shadow:0 10px 20px rgba(0,0,0,0.08); cursor:pointer; overflow:hidden; background:#fff" onclick="openModal('Puding', '', '120', 'https://res.cloudinary.com/dbwqidxpy/image/upload/v1764355645/ggov5ymyup8wwvnhfxx1.jpg', '[]', '', '300')">
+                            <img src="https://res.cloudinary.com/dbwqidxpy/image/upload/v1764355645/ggov5ymyup8wwvnhfxx1.jpg" class="card-img-top" style="height:150px; object-fit:cover">
+                            <div class="card-body p-3 w-100 d-flex flex-column justify-content-between">
+                                <div>
+                                    <div class="mb-1"><span class="badge bg-warning text-dark me-1" style="font-size:10px">Yeni</span></div>
+                                    <h6 class="fw-bold mb-1">Puding</h6>
+                                    <p class="small text-muted mb-2 text-truncate" style="max-height:40px"></p>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center mt-2">
+                                    <span class="fw-bold" style="color:#f05800; font-size:1.1rem">120₺</span>
+                                    <button class="btn btn-sm rounded-circle text-white shadow-sm" style="background:#f05800; width:30px; height:30px; padding:0">+</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div></div><h5 class="mt-4 mb-3 fw-bold ps-2" style="border-left:4px solid #f05800; color:#333">Kutu İçecekler</h5><div class="row g-3">
+                    <div class="col-12">
+                        <div class="card h-100 border-0 " style="border-radius:16px; box-shadow:0 10px 20px rgba(0,0,0,0.08); cursor:pointer; overflow:hidden; background:#fff" onclick="openModal('Kola', '', '60', 'https://res.cloudinary.com/dbwqidxpy/image/upload/v1764355636/gjyt7snoz4z09jzq2no6.jpg', '[]', '', '300')">
+                            <img src="https://res.cloudinary.com/dbwqidxpy/image/upload/v1764355636/gjyt7snoz4z09jzq2no6.jpg" class="card-img-top" style="height:150px; object-fit:cover">
+                            <div class="card-body p-3 w-100 d-flex flex-column justify-content-between">
+                                <div>
+                                    <div class="mb-1"><span class="badge bg-warning text-dark me-1" style="font-size:10px">Yeni</span></div>
+                                    <h6 class="fw-bold mb-1">Kola</h6>
+                                    <p class="small text-muted mb-2 text-truncate" style="max-height:40px"></p>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center mt-2">
+                                    <span class="fw-bold" style="color:#f05800; font-size:1.1rem">60₺</span>
+                                    <button class="btn btn-sm rounded-circle text-white shadow-sm" style="background:#f05800; width:30px; height:30px; padding:0">+</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div></div><h5 class="mt-4 mb-3 fw-bold ps-2" style="border-left:4px solid #f05800; color:#333">Atıştırmalık Menüler</h5><div class="row g-3">
+                    <div class="col-12">
+                        <div class="card h-100 border-0 " style="border-radius:16px; box-shadow:0 10px 20px rgba(0,0,0,0.08); cursor:pointer; overflow:hidden; background:#fff" onclick="openModal('Patates Kızartması', '', '220', 'https://res.cloudinary.com/dbwqidxpy/image/upload/v1764355704/qljffmwnpr6rywiqpjyy.jpg', '[]', '', '400')">
+                            <img src="https://res.cloudinary.com/dbwqidxpy/image/upload/v1764355704/qljffmwnpr6rywiqpjyy.jpg" class="card-img-top" style="height:150px; object-fit:cover">
+                            <div class="card-body p-3 w-100 d-flex flex-column justify-content-between">
+                                <div>
+                                    <div class="mb-1"><span class="badge bg-warning text-dark me-1" style="font-size:10px">Yeni</span></div>
+                                    <h6 class="fw-bold mb-1">Patates Kızartması</h6>
+                                    <p class="small text-muted mb-2 text-truncate" style="max-height:40px"></p>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center mt-2">
+                                    <span class="fw-bold" style="color:#f05800; font-size:1.1rem">220₺</span>
+                                    <button class="btn btn-sm rounded-circle text-white shadow-sm" style="background:#f05800; width:30px; height:30px; padding:0">+</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div></div></div>
+
+        <div class="mt-5 pt-4 border-top text-center text-muted small">
+            <h6 class="fw-bold">Tanıtım Kafe</h6>
+            <p class="mb-1"><i class="fas fa-map-marker-alt"></i> -</p>
+            <p><i class="fas fa-phone"></i> -</p>
+            <a href="https://instagram.com/@alnigamestudios" class="btn btn-outline-dark btn-sm rounded-pill mt-2"><i class="fab fa-instagram"></i> Follow</a>
+        </div>
+    </div>
+
+    <div class="modal fade" id="dm" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable p-0">
+            <div class="modal-content border-0 overflow-hidden" style="border-radius:20px">
+                <button type="button" class="btn-close position-absolute top-0 end-0 m-3 bg-white p-2 shadow" data-bs-dismiss="modal" style="z-index:99"></button>
+                <img id="mi" src="" class="modal-img">
+                <div class="modal-body p-4">
+                    <div class="d-flex justify-content-between align-items-start">
+                        <h3 id="mt" class="fw-bold mb-2"></h3>
+                        <h3 id="mp" class="fw-bold text-primary"></h3>
+                    </div>
+                    <p id="md" class="text-muted mb-3"></p>
+                    
+                    <div id="mInfo" class="mb-3 d-flex gap-2"></div>
+
+                    <div id="vArea" class="mb-3 p-3 bg-light rounded d-none">
+                        <label class="small fw-bold mb-2 text-dark">Seçenekler</label>
+                        <div id="vList"></div>
+                    </div>
+                    
+                    <button class="btn btn-dark w-100 py-3 fw-bold rounded-pill shadow-lg mt-2" style="background:#f05800; border:none">Sipariş Notu Ekle</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const u = new URLSearchParams(location.search);
+        if(u.get('table') && document.getElementById('tn')) document.getElementById('tn').innerText = u.get('table');
+
+        const m = new bootstrap.Modal(document.getElementById('dm'));
+        
+        function openModal(name, desc, price, img, variantsJson, allergens, cal) {
+            document.getElementById('mt').innerText = name;
+            document.getElementById('md').innerText = desc;
+            document.getElementById('mp').innerText = price + '₺';
+            
+            const iEl = document.getElementById('mi');
+            if(img) { iEl.src=img; iEl.style.display='block'; } else { iEl.style.display='none'; }
+
+            let infoHtml = "";
+            if(cal) infoHtml += '<span class="badge bg-light text-dark border"><i class="fas fa-fire"></i> '+cal+' kcal</span>';
+            if(allergens) infoHtml += '<span class="badge bg-warning text-dark"><i class="fas fa-exclamation-triangle"></i> '+allergens+'</span>';
+            document.getElementById('mInfo').innerHTML = infoHtml;
+
+            const vList = document.getElementById('vList');
+            const vArea = document.getElementById('vArea');
+            const variants = JSON.parse(variantsJson || '[]');
+            
+            if(variants.length > 0) {
+                vArea.classList.remove('d-none');
+                vList.innerHTML = "";
+                variants.forEach((v, idx) => {
+                    vList.innerHTML += '<div class="form-check"><input class="form-check-input" type="radio" name="var" id="v'+idx+'"><label class="form-check-label d-flex justify-content-between" for="v'+idx+'"><span>'+v.name+'</span><b>+'+v.price+'₺</b></label></div>';
+                });
+            } else {
+                vArea.classList.add('d-none');
+            }
+
+            m.show();
+        }
+
+        function search(val) {
+            const t = val.toLowerCase();
+            document.querySelectorAll('.card').forEach(el => {
+                const txt = el.innerText.toLowerCase();
+                el.parentElement.style.display = txt.includes(t) ? 'block' : 'none';
+            });
+        }
+    </script>
+</body>
+</html>
